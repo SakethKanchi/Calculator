@@ -7,7 +7,7 @@
     <body>
         <div class="container">
             <form class="calculator" name="calc">
-                <input type="text" id="screen" readonly class="value" name="txt"/> 
+                <input type="text" readonly class="value" name="txt"/> 
                 <span class = "num clear" onclick="calc.txt.value = ''">c</span>
                 <span class = "num" onclick="document.calc.txt.value += '/'">/</span>
                 <span class = "num" onclick="document.calc.txt.value += '*'">*</span>
@@ -25,24 +25,12 @@
                 <span class = "num" onclick="document.calc.txt.value += '0'">0</span>
                 <span class = "num" onclick="document.calc.txt.value += '00'">00</span>
                 <span class = "num" onclick="document.calc.txt.value += '.'">.</span>
-                <span id="equal" class = "num" >=</span>
+                <span class = "num" onclick="document.calc.txt.value = eval(calc.txt.value)">=</span>
                 </form>
         </div>
         <script type="text/javascript" src="vanilla-tilt.js"></script>
         <script type="text/javascript">
 	        VanillaTilt.init(document.querySelector(".container"), {max: 25,speed: 400, glare: false, "max-glare": 0.3});
-        </script>
-        <script>
-            let equal = document.getElementById('equal');
-            let screen = document.getElementById('screen');
-            equal.addEventListener('click', function(){
-                if(screen.value == ""){
-                    screen.value == ""
-                }else{
-                    screen.value = eval(screen.value)
-                }
-            })
-
         </script>
     </body>
 </html>
